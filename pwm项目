@@ -218,6 +218,10 @@ Pulse	0
 void RGB_Set(uint8_t r, uint8_t g, uint8_t b)
 {
     __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, r);
+/*__HAL_TIM_SET_COMPARE	HAL 宏：把值写进 CCR 寄存器
+&htim3	操作 TIM3 定时器
+TIM_CHANNEL_1	通道 1（在 RGB 里对应红色 R）
+r	写入的值 = 红色亮度（0~255）*/
     __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, g);
     __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_3, b);
 }
